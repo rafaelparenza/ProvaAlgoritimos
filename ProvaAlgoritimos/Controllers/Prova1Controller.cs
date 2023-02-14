@@ -36,6 +36,10 @@ namespace ProvaAlgoritimos.Controllers
             É PROIBIDO
             Pesquisar enunciados e solicitar ajuda de alguem.
 
+
+            Essa prova tem como objetivo identificar se aluno adquiriu a capacidade de analise, implementar uma logica coerente com a descrição passada.
+            
+
          */
 
         /*1) Exercicio 1, O sistema em que vc está trabalhando promete conseguir seguidores no instagram, seu trabalho é construir uma etapa que
@@ -44,6 +48,7 @@ namespace ProvaAlgoritimos.Controllers
         O sistema garante uma entrada de 50 seguidores por dia. 
         Como o usuario quer saber o numero de dias o valor deve ser arredondado sempre para cima, utilize Math.Ceiling(VariavelDecimalNroDias) para arredondar.
 */
+        [HttpGet("Ex1")]
         public string QuestaoNumero1(int seguidoresInicio, int metaSeguidores)
         {
             string retorno = "";
@@ -66,6 +71,8 @@ namespace ProvaAlgoritimos.Controllers
         O seu chefe deixou claro e É essencial que seja utilizado o swtich Case...
 
 */
+        [HttpGet("Ex2")]
+
         public string QuestaoNumero2(int diaSemanaEquivalente)
         {
             string retorno = "";
@@ -89,7 +96,10 @@ namespace ProvaAlgoritimos.Controllers
         Retorno: ClaudiaStefani
 
 */
-        public string QuestaoNumero3(string raca, string idade, string genero)
+
+        [HttpGet("Ex3")]
+
+        public string QuestaoNumero3(string? raca="", string? idade="", string? genero="")
         {
             string retorno = "";
 
@@ -106,6 +116,9 @@ namespace ProvaAlgoritimos.Controllers
             Seu chefe deixou claro que é essencial o uso de ternario. (Logica?verdadeiro:falso)
 
 */
+
+        [HttpGet("Ex4")]
+
         public string QuestaoNumero4(decimal idade)
         {
             string retorno = "";
@@ -124,6 +137,9 @@ namespace ProvaAlgoritimos.Controllers
             int restoMinutos = totalMinutes % 1440;
 
          */
+
+        [HttpGet("Ex5")]
+
         public string QuestaoNumero5(decimal minutos)
         {
             string retorno = "";
@@ -136,6 +152,8 @@ namespace ProvaAlgoritimos.Controllers
 
         /*6) Ajude o professor leia 5 notas e tire a media, caso o aluno tirou >=6 aprovado, senão reprovado...  
         retorne a media e diga se ele está aprovado ou reprovado. Exemplo de retorno A media é 9 o aluno está APROVADO.*/
+        
+        [HttpGet("Ex6")]
         public string QuestaoNumero6(decimal n1, decimal n2, decimal n3, decimal n4, decimal n5)
         {
             string retorno = "";
