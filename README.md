@@ -1,21 +1,21 @@
 # ProvaAlgoritimos
 Prova aplicada para alunos particulares, exercicios de algoritimos com API c#
 PROVA GA
-*  multiplicação 
-+ Soma
-- Subtração
-/ Divisão
-% Resto da divisão
-+= somar/concatenar a si mesmo
-> Maior que
-< Menor que
-<= Menor igual que
->= Maior igual que
-!= diferente de
-== é igual a
+"*"  multiplicação 
+"+" Soma
+"-" Subtração
+"/" Divisão
+"%" Resto da divisão
+"+=" somar/concatenar a si mesmo
+">" Maior que
+"<" Menor que
+"<=" Menor igual que
+">=" Maior igual que
+"!=" diferente de
+"==" é igual a
 
-&& Operador logico E
-|| Operador logico Ou
+"&&" Operador logico E
+"||" Operador logico Ou
 
 
 Clone esse repositório no github e e envie por push ao termino da prova
