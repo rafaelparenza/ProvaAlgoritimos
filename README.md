@@ -1,7 +1,7 @@
 # ProvaAlgoritimos
 Prova aplicada para alunos particulares, exercicios de algoritimos com API c#
 PROVA GA
-"*"  multiplicação 
+"*"  multiplicação <br>
 "+" Soma
 "-" Subtração
 "/" Divisão
