@@ -20,7 +20,6 @@ PROVA GA<br>
 <br>
 Clone esse repositório no github e e envie por push ao termino da prova
 <br>
-___
 1) Exercicio 1, O sistema em que vc está trabalhando promete conseguir seguidores no instagram, seu trabalho é construir uma etapa que informe quanto tempo (em dias) vai levar para ela alcançar o resultado esperado. 
 O usuario deve informar a quantidade de seguidores e em quanto quer chegar, o sistema deve calcular o tempo.
 O sistema garante uma entrada de 50 seguidores por dia. 
