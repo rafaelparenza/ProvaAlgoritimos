@@ -42,19 +42,19 @@ namespace ProvaAlgoritimos.Controllers
 
          */
 
-        /*1) Exercicio 1, O sistema em que vc está trabalhando promete conseguir seguidores no instagram, seu trabalho é construir uma etapa que
-        informe quanto tempo (em dias) vai levar para ela alcançar o resultado esperado. 
-        O usuario deve informar a quantidade de seguidores e em quanto quer chegar, o sistema deve calcular o tempo.
-        O sistema garante uma entrada de 50 seguidores por dia. 
+        /*1) Exercicio 1, O sistema em que vc está trabalhando promete conseguir seguidores no instagram, 
+         * seu trabalho é construir uma etapa que informe quanto tempo (em dias) vai levar para ela alcançar 
+         * o resultado esperado. O usuario deve informar a quantidade de seguidores e em quanto quer chegar, 
+         * o sistema deve calcular o tempo.O sistema garante uma entrada de 50 seguidores por dia. 
         Como o usuario quer saber o numero de dias o valor deve ser arredondado sempre para cima, utilize Math.Ceiling(VariavelDecimalNroDias) para arredondar.
 */
         [HttpGet("Ex1")]
-        public string QuestaoNumero1(int seguidoresInicio, int metaSeguidores)
+        public int QuestaoNumero1(int seguidoresInicio, int metaSeguidores)
         {
-            string retorno = "";
+            int retorno = 0;
 
-            
-
+            int Nrodias = (metaSeguidores - seguidoresInicio) / 50;
+            retorno = Nrodias;
 
             return retorno;
         }
@@ -77,8 +77,33 @@ namespace ProvaAlgoritimos.Controllers
         {
             string retorno = "";
 
-
-
+            switch (diaSemanaEquivalente)
+            {
+                case 0:
+                    retorno += "Domingo";
+                    break;
+                case 1:
+                    retorno += "Segunda-feira";
+                    break;
+                case 2:
+                    retorno += "Terça-feira";
+                    break;
+                case 3:
+                    retorno += "Quarta-feira";
+                    break;
+                case 4:
+                    retorno += "Quinta-feira";
+                    break;
+                case 5:
+                    retorno += "Sexta-feira";
+                    break;
+                case 6:
+                    retorno += "Sábado";
+                    break;
+                default:
+                    retorno += "Dia inválido";
+                    break;
+            }
 
             return retorno;
         }
@@ -99,12 +124,33 @@ namespace ProvaAlgoritimos.Controllers
 
         [HttpGet("Ex3")]
 
-        public string QuestaoNumero3(string? raca="", string? idade="", string? genero="")
+        public string QuestaoNumero3(string raca = "", string idade = "", string genero = "")
         {
             string retorno = "";
 
+            string branco = "branco";
+            string negro = "negro";
+            string luiz = "Luiz";
+            string Carlos = "Carlos";
+            string Stefani = "Stefani";
+            string Claudia = "Claudia";
 
-
+            if (raca == branco && idade == "18" && genero == homem)
+            {
+                retorno = luiz;
+            }
+            else if (raca == negro && idade == "20" && genero == mulher)
+            {
+                retorno = Carlos;
+            }
+            else if (raca == branco && idade == "20" && genero == mulher)
+            {
+                retorno = Stefani;
+            }
+            else if (raca == negro && idade == "18" && genero == mulher)
+            {
+                retorno = Claudia;
+            }
 
             return retorno;
         }
@@ -122,9 +168,7 @@ namespace ProvaAlgoritimos.Controllers
         public string QuestaoNumero4(decimal idade)
         {
             string retorno = "";
-
-
-
+            retorno = (idade <= 18 ? "jovem" : idade <= 60 ? "adulto" : " idoso");
 
             return retorno;
         }
@@ -144,22 +188,29 @@ namespace ProvaAlgoritimos.Controllers
         {
             string retorno = "";
 
-
-
-
+          
             return retorno;
         }
 
         /*6) Ajude o professor leia 5 notas e tire a media, caso o aluno tirou >=6 aprovado, senão reprovado...  
         retorne a media e diga se ele está aprovado ou reprovado. Exemplo de retorno A media é 9 o aluno está APROVADO.*/
-        
+
         [HttpGet("Ex6")]
         public string QuestaoNumero6(decimal n1, decimal n2, decimal n3, decimal n4, decimal n5)
         {
             string retorno = "";
 
+            decimal medianota = (n1 + n2 + n3 + n4 + n5) / 5;
+            if (medianota >= 6)
+            {
+                retorno = "aprovado";
 
+            }
+            else
+            {
+                retorno = "reprovado";
 
+            }
 
             return retorno;
         }
