@@ -52,9 +52,14 @@ namespace ProvaAlgoritimos.Controllers
         public int QuestaoNumero1(int seguidoresInicio, int metaSeguidores)
         {
             int retorno = 0;
-
-            int Nrodias = (metaSeguidores - seguidoresInicio) / 50;
-            retorno = Nrodias;
+            //(decimal) forçar para decimal, pois divisao de inteiros da inteiro
+            decimal Nrodias = ((decimal)metaSeguidores - seguidoresInicio) / 50;
+            int diasInteiros = (int)Nrodias;
+            if(Nrodias- diasInteiros > 0)
+            {
+                diasInteiros = diasInteiros + 1;
+            }
+            retorno = diasInteiros;
 
             return retorno;
         }
@@ -134,22 +139,30 @@ namespace ProvaAlgoritimos.Controllers
             string Carlos = "Carlos";
             string Stefani = "Stefani";
             string Claudia = "Claudia";
+            string homem = "homem";
+            string mulher = "mulher";
 
-            if (raca == branco && idade == "18" && genero == homem)
+            if(raca== branco)
             {
-                retorno = luiz;
-            }
-            else if (raca == negro && idade == "20" && genero == mulher)
-            {
-                retorno = Carlos;
-            }
-            else if (raca == branco && idade == "20" && genero == mulher)
-            {
-                retorno = Stefani;
-            }
-            else if (raca == negro && idade == "18" && genero == mulher)
-            {
-                retorno = Claudia;
+                if (idade == "" && genero == "")
+                {
+                    retorno = Stefani + luiz;
+                }
+                else if(idade== "18")
+                {
+                    if (genero == "")
+                    {
+                        retorno = luiz;
+                    }
+                    else if(genero == homem)
+                    {
+                        retorno = luiz;
+                    }                    
+                }
+                else if(idade=="20")
+                {
+
+                }
             }
 
             return retorno;
@@ -187,9 +200,13 @@ namespace ProvaAlgoritimos.Controllers
         public string QuestaoNumero5(decimal minutos)
         {
             string retorno = "";
+            int dias = (int)minutos / 1440;
+            int restoMinutos = (int)minutos % 1440;
+            int horas = restoMinutos % 60;
+            int min = horas - restoMinutos;
 
-          
-            return retorno;
+
+            return ""+dias + horas + min;
         }
 
         /*6) Ajude o professor leia 5 notas e tire a media, caso o aluno tirou >=6 aprovado, senão reprovado...  
@@ -203,13 +220,11 @@ namespace ProvaAlgoritimos.Controllers
             decimal medianota = (n1 + n2 + n3 + n4 + n5) / 5;
             if (medianota >= 6)
             {
-                retorno = "aprovado";
-
+                retorno = "A média é " + medianota+ "o aluno está aprovado";
             }
             else
             {
-                retorno = "reprovado";
-
+                retorno = "A média é " + medianota + "o aluno está reprovado";
             }
 
             return retorno;
